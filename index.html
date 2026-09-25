@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Awesome Portfolio | Branding &amp; Image Making</title>
+  <meta name="description" content="Portfolio of a designer specialising in branding, image making, product design, art direction and visual design." />
+  <meta property="og:title" content="My Awesome Portfolio" />
+  <meta property="og:description" content="Branding | Image making — and I made it myself." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN). For production, compile with the Tailwind CLI using the same config. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Epilogue', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            ink: '#2d2d2d',
+            field: '#f3f3f3',
+            cream: '#fffcf5',
+            honey: '#ffd285',
+            avatar: '#d8d8d8',
+          },
+          fontSize: {
+            // Figma text styles: [size, line-height]
+            body: ['17px', '27px'],
+            subtitle: ['20px', '30px'],
+            h3: ['27px', '42px'],
+            h2: ['32px', '42px'],
+            display: ['80px', '90px'],
+          },
+          maxWidth: { content: '1080px' },
+        },
+      },
+    };
+  </script>
+</head>
+
+<!--
+  Desktop-first: base classes reproduce the 1280px Figma frame;
+  max-lg: (<1024px), max-md: (<768px) and max-sm: (<640px) scale it down.
+-->
+<body class="bg-white font-sans text-body text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+  <!-- ============ Navigation ============ -->
+  <header class="relative bg-white">
+    <nav class="mx-auto flex h-20 items-center justify-between px-[50px] max-md:px-6" aria-label="Primary">
+      <a href="#" class="text-subtitle font-semibold">Logo</a>
+
+      <button id="menu-toggle" type="button"
+        class="hidden p-2 max-md:block"
+        aria-controls="primary-menu" aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+      <ul id="primary-menu"
+        class="flex items-center gap-[50px]
+               max-md:absolute max-md:inset-x-0 max-md:top-20 max-md:z-40 max-md:hidden max-md:flex-col max-md:items-start max-md:gap-0 max-md:border-b max-md:border-black/10 max-md:bg-white max-md:px-6 max-md:pb-4">
+        <li><a href="#about" class="block leading-[28px] hover:underline max-md:py-3">About</a></li>
+        <li><a href="#work" class="block leading-[28px] hover:underline max-md:py-3">Work</a></li>
+        <li><a href="#contact" class="block leading-[28px] hover:underline max-md:py-3">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section id="about" class="px-[100px] py-[100px] max-lg:px-10 max-lg:py-20 max-md:px-6 max-md:py-12" aria-labelledby="hero-title">
+      <div class="mx-auto flex max-w-content items-center gap-7 max-md:flex-col-reverse max-md:items-start max-md:gap-10">
+        <div class="flex w-[557px] shrink-0 flex-col gap-10 max-lg:w-1/2 max-lg:shrink max-md:w-full max-md:gap-6">
+          <div class="flex flex-col gap-10 max-md:gap-4">
+            <p class="text-subtitle font-semibold">Branding | Image making</p>
+            <h1 id="hero-title" class="text-display font-semibold max-lg:text-[56px] max-lg:leading-[64px] max-sm:text-[40px] max-sm:leading-[48px]">
+              My awesome portfolio
+            </h1>
+          </div>
+          <p>And I made it myself! Yes. In Figma with Anima</p>
+        </div>
+        <img src="assets/images/hero.jpg" width="495" height="424"
+          alt="Abstract illustration of colourful shapes: a sun, a sparkle and an ellipse"
+          class="h-[424px] w-[495px] object-cover max-lg:h-auto max-lg:w-1/2 max-lg:aspect-[495/424] max-md:w-full" />
+      </div>
+    </section>
+
+    <!-- ============ Logos ============ -->
+    <section class="px-[66px] max-lg:px-10 max-md:px-6" aria-label="Brands I've worked with">
+      <ul class="mx-auto flex max-w-[1078px] items-center justify-between border-y-2 border-black/20 py-[60px]
+                 max-md:flex-wrap max-md:justify-center max-md:gap-x-10 max-md:gap-y-8 max-md:py-10">
+        <li><img src="assets/logos/behance.svg" width="53.685" height="34" alt="Behance" class="h-[34px] w-auto" /></li>
+        <li><img src="assets/logos/google.svg" width="103.287" height="34" alt="Google" class="h-[34px] w-auto" /></li>
+        <li><img src="assets/logos/apple.svg" width="38.111" height="46.828" alt="Apple" class="h-[46.828px] w-auto" /></li>
+        <li><img src="assets/logos/dribbble.svg" width="139.008" height="34" alt="Dribbble" class="h-[34px] w-auto" /></li>
+        <li><img src="assets/logos/awwwards.svg" width="213.854" height="34" alt="Awwwards" class="h-[34px] w-auto max-sm:h-[26px]" /></li>
+      </ul>
+    </section>
+
+    <!-- ============ Skills ============ -->
+    <section class="px-[140px] py-[180px] max-lg:px-10 max-lg:py-[120px] max-md:px-6 max-md:py-20" aria-label="Skills">
+      <ul class="mx-auto flex max-w-fit items-start justify-center gap-[125px] max-lg:gap-12 max-md:flex-col max-md:items-center max-md:gap-16">
+        <li class="flex w-[250px] flex-col items-center gap-14 text-center max-md:gap-8">
+          <img src="assets/images/skill-product-design.jpg" width="130" height="130" alt="" class="size-[130px] object-cover" />
+          <div class="flex flex-col gap-[19px]">
+            <h2 class="text-h3 font-semibold">Product design</h2>
+            <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+          </div>
+        </li>
+        <li class="flex w-[250px] flex-col items-center gap-14 text-center max-md:gap-8">
+          <img src="assets/images/skill-art-direction.jpg" width="130" height="130" alt="" class="size-[130px] object-cover" />
+          <div class="flex flex-col gap-[19px]">
+            <h2 class="text-h3 font-semibold">Art direction</h2>
+            <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+          </div>
+        </li>
+        <li class="flex w-[250px] flex-col items-center gap-14 text-center max-md:gap-8">
+          <img src="assets/images/skill-visual-design.jpg" width="130" height="130" alt="" class="size-[130px] object-cover" />
+          <div class="flex flex-col gap-[19px]">
+            <h2 class="text-h3 font-semibold">Visual design</h2>
+            <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ Latest work ============ -->
+    <section id="work" class="px-[100px] py-5 max-lg:px-10 max-md:px-6" aria-labelledby="work-title">
+      <h2 id="work-title" class="mb-[60px] text-center text-h2 font-semibold max-md:mb-10">My latest work</h2>
+      <ul class="mx-auto grid max-w-content grid-cols-[repeat(3,315px)] justify-center gap-x-[67.5px] gap-y-[60px]
+                 max-lg:grid-cols-3 max-lg:gap-x-6 max-md:grid-cols-2 max-md:gap-y-10 max-sm:grid-cols-1">
+        <li>
+          <article class="flex flex-col gap-[25px]">
+            <img src="assets/images/work-free-bird.jpg" width="315" height="315" alt="Free Bird artwork: a stylised eye on an orange background" class="aspect-square w-full object-cover" loading="lazy" />
+            <div class="flex flex-col gap-2.5">
+              <h3 class="text-subtitle font-semibold">Free Bird</h3>
+              <p>Lynyrd Skynyrd</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex flex-col gap-[25px]">
+            <img src="assets/images/work-purple-haze.jpg" width="315" height="315" alt="Purple Haze artwork: a blurred purple and yellow circle" class="aspect-square w-full object-cover" loading="lazy" />
+            <div class="flex flex-col gap-2.5">
+              <h3 class="text-subtitle font-semibold">Purple Haze</h3>
+              <p>Jimi Hendrix</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex flex-col gap-[25px]">
+            <img src="assets/images/work-you-really-got-me.jpg" width="315" height="315" alt="You Really Got Me artwork: a small speckled circle on green" class="aspect-square w-full object-cover" loading="lazy" />
+            <div class="flex flex-col gap-2.5">
+              <h3 class="text-subtitle font-semibold">You Really Got Me</h3>
+              <p>The Kinks</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex flex-col gap-[25px]">
+            <img src="assets/images/work-american-girl.jpg" width="315" height="315" alt="American Girl artwork: two sparkles on a blue background" class="aspect-square w-full object-cover" loading="lazy" />
+            <div class="flex flex-col gap-2.5">
+              <h3 class="text-subtitle font-semibold">American Girl</h3>
+              <p>Tom Petty</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex flex-col gap-[25px]">
+            <img src="assets/images/work-whole-lotta-love.jpg" width="315" height="315" alt="Whole Lotta Love artwork: a row of white flowers on yellow" class="aspect-square w-full object-cover" loading="lazy" />
+            <div class="flex flex-col gap-2.5">
+              <h3 class="text-subtitle font-semibold">Whole Lotta Love</h3>
+              <p>Led Zeppelin</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex flex-col gap-[25px]">
+            <img src="assets/images/work-under-pressure.jpg" width="315" height="315" alt="Under Pressure artwork: a blurred green, blue and yellow gradient ellipse" class="aspect-square w-full object-cover" loading="lazy" />
+            <div class="flex flex-col gap-2.5">
+              <h3 class="text-subtitle font-semibold">Under Pressure</h3>
+              <p>Queen</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ Clients ============ -->
+    <section class="px-[100px] pb-[150px] pt-[100px] max-lg:px-10 max-lg:pb-24 max-md:px-6 max-md:pb-20 max-md:pt-20" aria-labelledby="clients-title">
+      <h2 id="clients-title" class="mb-[55px] text-center text-h2 font-semibold max-md:mb-10">Clients</h2>
+      <ul class="mx-auto grid max-w-content grid-cols-[repeat(3,315px)] justify-center gap-[67.5px]
+                 max-lg:grid-cols-3 max-lg:gap-6 max-md:grid-cols-1 max-md:max-w-[420px]">
+        <!-- Client card -->
+        <li>
+          <figure class="flex h-full flex-col gap-20 border-[1.5px] border-honey bg-cream py-[30px] pl-[30px] pr-[50px] max-lg:gap-12 max-lg:pr-[30px]">
+            <blockquote class="text-subtitle font-semibold">
+              <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+            </blockquote>
+            <figcaption class="mt-auto flex items-start gap-5">
+              <img src="assets/images/client-1.jpg" width="50" height="50" alt="" class="size-[50px] rounded-full border border-avatar object-cover" loading="lazy" />
+              <div class="flex flex-col gap-2.5">
+                <div class="flex gap-[5px]" role="img" aria-label="Rated 5 out of 5">
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                </div>
+                <p><cite class="not-italic">Gemma Nolen,</cite><br />Google</p>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="flex h-full flex-col gap-20 border-[1.5px] border-honey bg-cream py-[30px] pl-[30px] pr-[50px] max-lg:gap-12 max-lg:pr-[30px]">
+            <blockquote class="text-subtitle font-semibold">
+              <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+            </blockquote>
+            <figcaption class="mt-auto flex items-start gap-5">
+              <img src="assets/images/client-2.jpg" width="50" height="50" alt="" class="size-[50px] rounded-full border border-avatar object-cover" loading="lazy" />
+              <div class="flex flex-col gap-2.5">
+                <div class="flex gap-[5px]" role="img" aria-label="Rated 5 out of 5">
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                </div>
+                <p><cite class="not-italic">Gemma Nolen,</cite><br />Google</p>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="flex h-full flex-col gap-20 border-[1.5px] border-honey bg-cream py-[30px] pl-[30px] pr-[50px] max-lg:gap-12 max-lg:pr-[30px]">
+            <blockquote class="text-subtitle font-semibold">
+              <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+            </blockquote>
+            <figcaption class="mt-auto flex items-start gap-5">
+              <img src="assets/images/client-3.jpg" width="50" height="50" alt="" class="size-[50px] rounded-full border border-avatar object-cover" loading="lazy" />
+              <div class="flex flex-col gap-2.5">
+                <div class="flex gap-[5px]" role="img" aria-label="Rated 5 out of 5">
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                  <img src="assets/icons/star.svg" width="20" height="20" alt="" class="size-5" />
+                </div>
+                <p><cite class="not-italic">Gemma Nolen,</cite><br />Google</p>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ============ Footer / Contact ============ -->
+  <footer id="contact" class="px-[100px] pb-[70px] max-lg:px-10 max-md:px-6 max-md:pb-12" aria-labelledby="contact-title">
+    <div class="mx-auto flex max-w-content justify-center gap-[190px] border-t-2 border-black/20 pt-[70px]
+                max-lg:gap-12 max-md:flex-col max-md:pt-12">
+      <div class="flex w-[360px] shrink-0 flex-col gap-[60px] max-lg:w-auto max-lg:flex-1 max-md:gap-10">
+        <div class="flex flex-col gap-10 max-md:gap-6">
+          <h2 id="contact-title" class="text-h2 font-semibold">Let’s work together</h2>
+          <p>This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com This is a template Figma file, turned into code using Anima. Learn more at AnimaApp.com</p>
+        </div>
+        <ul class="flex gap-[13px]" aria-label="Social media">
+          <li><a href="https://discord.com/invite/eQxkYTNxSp" target="_blank" rel="noopener noreferrer" class="block transition-opacity hover:opacity-70"><img src="assets/icons/discord.svg" width="36" height="36" alt="Discord" class="size-9" /></a></li>
+          <li><a href="https://www.facebook.com/animaapp/" target="_blank" rel="noopener noreferrer" class="block transition-opacity hover:opacity-70"><img src="assets/icons/facebook.svg" width="36" height="36" alt="Facebook" class="size-9" /></a></li>
+          <li><a href="https://dribbble.com/animaapp" target="_blank" rel="noopener noreferrer" class="block transition-opacity hover:opacity-70"><img src="assets/icons/dribbble.svg" width="36" height="36" alt="Dribbble" class="size-9" /></a></li>
+          <li><a href="https://www.instagram.com/animaapp/?hl=en" target="_blank" rel="noopener noreferrer" class="block transition-opacity hover:opacity-70"><img src="assets/icons/instagram.svg" width="36" height="36" alt="Instagram" class="size-9" /></a></li>
+          <li><a href="https://www.behance.net/Anima_design" target="_blank" rel="noopener noreferrer" class="block transition-opacity hover:opacity-70"><img src="assets/icons/behance.svg" width="36" height="36" alt="Behance" class="size-9" /></a></li>
+        </ul>
+      </div>
+
+      <form action="#" method="post" class="flex w-[530px] flex-col items-start gap-10 max-lg:w-auto max-lg:flex-1 max-md:w-full">
+        <div class="flex w-full flex-col gap-5">
+          <label for="name" class="sr-only">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required placeholder="Name"
+            class="w-full bg-field px-[30px] py-[21px] text-body text-ink placeholder:text-ink outline-none focus:ring-2 focus:ring-ink" />
+
+          <label for="email" class="sr-only">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="Email"
+            class="w-full bg-field px-[30px] py-[21px] text-body text-ink placeholder:text-ink outline-none focus:ring-2 focus:ring-ink" />
+
+          <label for="message" class="sr-only">Message</label>
+          <textarea id="message" name="message" rows="7" required placeholder="Type your message here"
+            class="h-[231px] w-full resize-y bg-field px-[30px] py-[21px] text-body text-ink placeholder:text-ink outline-none focus:ring-2 focus:ring-ink"></textarea>
+        </div>
+        <button type="submit"
+          class="bg-ink px-[82px] py-[25px] text-subtitle font-semibold text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 max-sm:w-full">
+          Submit
+        </button>
+      </form>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('primary-menu');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('max-md:hidden', open);
+      menu.classList.toggle('max-md:flex', !open);
+    });
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a') && toggle.getAttribute('aria-expanded') === 'true') toggle.click();
+    });
+  </script>
+</body>
+</html>
